@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '/core/app_export.dart';
 import 'package:medusa_ecommerce/presentation/catalog_2_screen/models/catalog_2_model.dart';
 import 'package:flutter/material.dart';
@@ -68,8 +70,8 @@ class Catalog2Controller extends GetxController with StateMixin<dynamic> {
         getProductsResp!.products!.isNotEmpty) {
       for (var element in getProductsResp!.products!) {
         var group30ItemModel = Group30ItemModel();
-        group30ItemModel.languageTxt.value = element.title!.toString();
-        group30ItemModel.imageImg.value = element.thumbnail!.toString();
+        group30ItemModel.languageTxt.value =element.title.toString();
+        group30ItemModel.imageImg.value =  element.thumbnail!=null?element.thumbnail!.toString():"";;
         group30ItemModelList.add(group30ItemModel);
       }
     }

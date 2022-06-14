@@ -3,5 +3,5 @@ import 'group30_item_model.dart';
 
 class Catalog2Model {
   RxList<Group30ItemModel> group30ItemList =
-      RxList.filled(2, Group30ItemModel());
+      RxList.filled(0, Group30ItemModel());
 }

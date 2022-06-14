@@ -137,27 +137,26 @@ class Catalog2Screen extends GetWidget<Catalog2Controller> {
                                                         Align(
                                                             alignment: Alignment
                                                                 .topRight,
-                                                            child: Padding(
-                                                                padding: EdgeInsets.only(
-                                                                    left: getHorizontalSize(
-                                                                        24.00),
-                                                                    top: getVerticalSize(
-                                                                        26.00),
-                                                                    right: getHorizontalSize(
-                                                                        24.00),
-                                                                    bottom: getVerticalSize(
-                                                                        26.00)),
-                                                                child: Container(
-                                                                    height:
-                                                                        getVerticalSize(
-                                                                            14.00),
-                                                                    width: getHorizontalSize(
-                                                                        17.00),
-                                                                    child: SvgPicture.asset(
-                                                                        ImageConstant
-                                                                            .imgShape,
-                                                                        fit: BoxFit
-                                                                            .fill))))
+                                                            child:
+                                                                GestureDetector(
+                                                                    onTap: () {
+                                                                      onTapImgShape();
+                                                                    },
+                                                                    child: Padding(
+                                                                        padding: EdgeInsets.only(
+                                                                            left: getHorizontalSize(
+                                                                                24.00),
+                                                                            top: getVerticalSize(
+                                                                                26.00),
+                                                                            right: getHorizontalSize(
+                                                                                24.00),
+                                                                            bottom: getVerticalSize(
+                                                                                26.00)),
+                                                                        child: Container(
+                                                                            height:
+                                                                                getVerticalSize(14.00),
+                                                                            width: getHorizontalSize(17.00),
+                                                                            child: SvgPicture.asset(ImageConstant.imgShape, fit: BoxFit.fill)))))
                                                       ]))),
                                               Padding(
                                                   padding: EdgeInsets.only(
@@ -168,7 +167,8 @@ class Catalog2Screen extends GetWidget<Catalog2Controller> {
                                                       right: getHorizontalSize(
                                                           10.00)),
                                                   child: Obx(() =>
-                                                      ListView.builder(
+                                                      GridView.builder(
+                                                    
                                                           physics:
                                                               BouncingScrollPhysics(),
                                                           shrinkWrap: true,
@@ -186,8 +186,19 @@ class Catalog2Screen extends GetWidget<Catalog2Controller> {
                                                                     .value
                                                                     .group30ItemList[index];
                                                             return Group30ItemWidget(
-                                                                model);
-                                                          })))
+                                                                model,
+                                                                onTapProductcardSa:
+                                                                ()=>{
+                                                                  // Get.toNamed(AppRoutes.productCardScreen,
+                                                                  //             arguments: {
+                                                                  //               NavigationArgs.id: controller.getProductsResp.products![index].id
+                                                                  //             })
+                                                                });
+                                                          }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 0.0,
+                mainAxisSpacing: 0.0,
+              ),)))
                                             ]))
                                   ]))))),
               Container(
@@ -372,5 +383,13 @@ class Catalog2Screen extends GetWidget<Catalog2Controller> {
                                     ]))
                           ])))
             ])));
+  }
+
+  onTapProductcardSa() {
+  //  Get.toNamed(AppRoutes.productCardScreen);
+  }
+
+  onTapImgShape() {
+   Get.toNamed(AppRoutes.catalog1Screen);
   }
 }

@@ -37,8 +37,6 @@ class ProductCardController extends GetxController with StateMixin<dynamic> {
     return Get.find<ApiClient>().fetchId(
         headers: {
           'Content-Type': 'application/json',
-          'Cookie':
-              'connect.sid=s%3Ak6oMnCUTFMSH0msW2HSum61hf0b0rOE3.d3rUrDBI8umYKaLGIwteUH0ruO%2BHVoXevcwS16c8J3w',
         },
         onSuccess: (resp) {
           onFetchIdSuccess(resp);
@@ -79,6 +77,8 @@ class ProductCardController extends GetxController with StateMixin<dynamic> {
         getIdResp.product!.thumbnail!.toString();
     productCardModelObj.value.descriptionTxt.value =
         getIdResp.product!.description!.toString();
+        productCardModelObj.value.handleTxt.value =
+        getIdResp.product!.handle!.toString();
   }
 
   void _onFetchIdError() {}

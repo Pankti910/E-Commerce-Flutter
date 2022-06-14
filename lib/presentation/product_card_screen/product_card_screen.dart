@@ -133,17 +133,7 @@ class ProductCardScreen extends GetWidget<ProductCardController> {
                                                                         .circular(
                                                                             getHorizontalSize(1.50))))
                                                       ])),
-                                              Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: getHorizontalSize(
-                                                          4.00)),
-                                                  child: Image.asset(
-                                                      ImageConstant.imgImage17,
-                                                      height: getVerticalSize(
-                                                          413.00),
-                                                      width: getHorizontalSize(
-                                                          276.00),
-                                                      fit: BoxFit.fill))
+                                             
                                             ])),
                                     Padding(
                                         padding: EdgeInsets.only(
@@ -228,9 +218,10 @@ class ProductCardScreen extends GetWidget<ProductCardController> {
                                                   child: IconButton(
                                                       onPressed: () {},
                                                       constraints: BoxConstraints(
-                                                          minHeight:
-                                                              getSize(36.00),
                                                           minWidth:
+                                                              getHorizontalSize(
+                                                                  36.00),
+                                                          minHeight:
                                                               getSize(36.00)),
                                                       padding:
                                                           EdgeInsets.all(0),
@@ -261,13 +252,11 @@ class ProductCardScreen extends GetWidget<ProductCardController> {
                                                                             4))
                                                               ]),
                                                           padding: EdgeInsets.only(
-                                                              left:
-                                                                  getHorizontalSize(
-                                                                      11.00),
+                                                              left: getHorizontalSize(
+                                                                  11.00),
                                                               top: getVerticalSize(
                                                                   11.00),
-                                                              right:
-                                                                  getHorizontalSize(11.00),
+                                                              right: getHorizontalSize(11.00),
                                                               bottom: getVerticalSize(11.00)),
                                                           child: Image.asset(ImageConstant.imgAddtofavorite8))))
                                             ])),
@@ -285,7 +274,8 @@ class ProductCardScreen extends GetWidget<ProductCardController> {
                                                   padding: EdgeInsets.only(
                                                       left: getHorizontalSize(
                                                           16.00)),
-                                                  child: Text("lbl_h_m".tr,
+                                                  child:Obx(()=>Text(controller.productCardModelObj.value
+                                                .handleTxt.value.tr,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -294,7 +284,7 @@ class ProductCardScreen extends GetWidget<ProductCardController> {
                                                           .copyWith(
                                                               fontSize:
                                                                   getFontSize(
-                                                                      24)))),
+                                                                      24))))),
                                               Padding(
                                                   padding: EdgeInsets.only(
                                                       right: getHorizontalSize(

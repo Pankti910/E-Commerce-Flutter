@@ -2,7 +2,7 @@ import 'package:medusa_ecommerce/core/app_export.dart';
 import 'package:medusa_ecommerce/core/utils/progress_dialog_utils.dart';
 
 class ApiClient extends GetConnect {
-  var baseUrl = "http://192.168.150.157";
+  var baseUrl = "http://192.168.150.157:9000";
 
   @override
   void onInit() {
@@ -10,11 +10,7 @@ class ApiClient extends GetConnect {
     httpClient.timeout = Duration(seconds: 60);
     httpClient.addRequestModifier<dynamic>((request) {
       Map<String, String> headers = {
-        "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNjUyZjdjMTI0ODc2MDAxNTVjYzY0ZCIsImVtYWlsIjoiUHJpc2NpbGxhX01vaHJAeWFob28uY29tIiwiaWF0IjoxNjM0MDIyNDM4LCJleHAiOjE2MzQ2MjI0Mzh9.YYcCfVOnPA7ZFc-cV90a33_Hycddj-Xtt5kI6IRukxQ",
-        "Content-Type": "application/json",
-        "Cookie":
-            "connect.sid=s%3Ak6oMnCUTFMSH0msW2HSum61hf0b0rOE3.d3rUrDBI8umYKaLGIwteUH0ruO%2BHVoXevcwS16c8J3w"
+        "Content-Type": "application/json"
       };
       request.headers.addAll(headers);
       return request;
@@ -38,7 +34,7 @@ class ApiClient extends GetConnect {
     try {
       await isNetworkConnected();
       Response response =
-          await httpClient.get(':9000/store/products/$id', headers: headers);
+          await httpClient.get('/store/products/$id', headers: headers);
       ProgressDialogUtils.hideProgressDialog();
       if (response.statusCode == 200) {
         onSuccess!(response.body);
@@ -61,7 +57,7 @@ class ApiClient extends GetConnect {
     try {
       await isNetworkConnected();
       Response response =
-          await httpClient.get(':9000/store/products', headers: headers);
+          await httpClient.get('/store/products', headers: headers);
       ProgressDialogUtils.hideProgressDialog();
       if (response.statusCode == 200) {
         onSuccess!(response.body);

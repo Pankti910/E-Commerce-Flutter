@@ -58,29 +58,7 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Padding(
-                                                            padding: EdgeInsets.only(
-                                                                left:
-                                                                    getHorizontalSize(
-                                                                        15.00),
-                                                                top:
-                                                                    getVerticalSize(
-                                                                        12.00),
-                                                                bottom:
-                                                                    getVerticalSize(
-                                                                        99.00)),
-                                                            child: Container(
-                                                                height:
-                                                                    getVerticalSize(
-                                                                        16.00),
-                                                                width:
-                                                                    getHorizontalSize(
-                                                                        9.26),
-                                                                child: SvgPicture.asset(
-                                                                    ImageConstant
-                                                                        .imgChevron1,
-                                                                    fit: BoxFit
-                                                                        .fill))),
+                                                       
                                                         Padding(
                                                             padding: EdgeInsets.only(
                                                                 top:
@@ -90,7 +68,7 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                                                     getVerticalSize(
                                                                         93.00)),
                                                             child: Text(
-                                                                "lbl_women_s_tops"
+                                                                "E-commerce"
                                                                     .tr,
                                                                 overflow:
                                                                     TextOverflow
@@ -128,18 +106,7 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                                                     MainAxisAlignment
                                                                         .start,
                                                                 children: [
-                                                                  Align(
-                                                                      alignment:
-                                                                          Alignment
-                                                                              .center,
-                                                                      child: Container(
-                                                                          height: getSize(
-                                                                              17.49),
-                                                                          width: getSize(
-                                                                              17.49),
-                                                                          child: SvgPicture.asset(
-                                                                              ImageConstant.imgVector2,
-                                                                              fit: BoxFit.fill))),
+                                                                  
                                                                   GestureDetector(
                                                                       onTap:
                                                                           () {
@@ -154,7 +121,7 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                                                           child: Container(
                                                                               height: getVerticalSize(12.00),
                                                                               width: getHorizontalSize(16.00),
-                                                                              child: SvgPicture.asset(ImageConstant.imgShape5, fit: BoxFit.fill))))
+                                                                              child: SvgPicture.asset(ImageConstant.imgShape5, fit: BoxFit.fill)))),
                                                                 ]))
                                                       ]))),
                                           Align(
@@ -188,7 +155,13 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                                             return Group39ItemWidget(
                                                                 model,
                                                                 onTapGroup5:
-                                                                    onTapGroup5);
+                                                                    () => {
+                                                                          Get.toNamed(
+                                                                              AppRoutes.productCardScreen,
+                                                                              arguments: {
+                                                                                NavigationArgs.id: controller.getProductsResp.products![index].id
+                                                                              })
+                                                                        });
                                                           }))))
                                         ])
                                   ]))))),
@@ -280,12 +253,7 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
                                         CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Container(
-                                          height: getVerticalSize(23.00),
-                                          width: getHorizontalSize(24.00),
-                                          child: SvgPicture.asset(
-                                              ImageConstant.imgVector3,
-                                              fit: BoxFit.fill)),
+                                      
                                       Align(
                                           alignment: Alignment.centerRight,
                                           child: Padding(
@@ -376,9 +344,9 @@ class Catalog1Screen extends GetWidget<Catalog1Controller> {
             ])));
   }
 
-  onTapGroup5() {
+  onTapGroup5(index) {
     Get.toNamed(AppRoutes.productCardScreen, arguments: {
-      NavigationArgs.id: controller.getProductsResp.products!.id!
+      NavigationArgs.id: controller.getProductsResp.products![index].id
     });
   }
 

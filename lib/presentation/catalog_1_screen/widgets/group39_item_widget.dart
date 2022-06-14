@@ -160,16 +160,7 @@ class Group39ItemWidget extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        child: Image.asset(
-                                          ImageConstant.imgImage5,
-                                          height: getSize(
-                                            104.00,
-                                          ),
-                                          width: getSize(
-                                            104.00,
-                                          ),
-                                          fit: BoxFit.fill,
-                                        ),
+                                        
                                       ),
                                     ),
                                     Align(
@@ -196,16 +187,6 @@ class Group39ItemWidget extends StatelessWidget {
                                               0.00,
                                             ),
                                           ),
-                                        ),
-                                        child: Image.asset(
-                                          ImageConstant.imgImage6,
-                                          height: getSize(
-                                            104.00,
-                                          ),
-                                          width: getSize(
-                                            104.00,
-                                          ),
-                                          fit: BoxFit.fill,
                                         ),
                                       ),
                                     ),
@@ -393,8 +374,8 @@ class Group39ItemWidget extends StatelessWidget {
                                   10.00,
                                 ),
                               ),
-                              child: Text(
-                                "lbl_51".tr,
+                              child: Obx(()=>Text(
+                                group39ItemModelObj.priceTxt.value.toString(),
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style:
@@ -406,6 +387,7 @@ class Group39ItemWidget extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            ),
                           ],
                         ),
                       ),
@@ -414,79 +396,7 @@ class Group39ItemWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  left: getHorizontalSize(
-                    10.00,
-                  ),
-                  top: getVerticalSize(
-                    10.00,
-                  ),
-                ),
-                child: IconButton(
-                  onPressed: () {},
-                  constraints: BoxConstraints(
-                    minHeight: getSize(
-                      36.00,
-                    ),
-                    minWidth: getSize(
-                      36.00,
-                    ),
-                  ),
-                  padding: EdgeInsets.all(0),
-                  icon: Container(
-                    width: getSize(
-                      36.00,
-                    ),
-                    height: getSize(
-                      36.00,
-                    ),
-                    decoration: BoxDecoration(
-                      color: ColorConstant.whiteA700,
-                      borderRadius: BorderRadius.circular(
-                        getHorizontalSize(
-                          18.00,
-                        ),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: ColorConstant.black90014,
-                          spreadRadius: getHorizontalSize(
-                            2.00,
-                          ),
-                          blurRadius: getHorizontalSize(
-                            2.00,
-                          ),
-                          offset: Offset(
-                            0,
-                            4,
-                          ),
-                        ),
-                      ],
-                    ),
-                    padding: EdgeInsets.only(
-                      left: getHorizontalSize(
-                        11.00,
-                      ),
-                      top: getVerticalSize(
-                        11.00,
-                      ),
-                      right: getHorizontalSize(
-                        11.00,
-                      ),
-                      bottom: getVerticalSize(
-                        11.00,
-                      ),
-                    ),
-                    child: Image.asset(
-                      ImageConstant.imgAddtofavorite4,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            
           ],
         ),
       ),
